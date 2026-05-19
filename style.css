@@ -1,0 +1,195 @@
+body {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+
+  /* Default page font */
+  font-family: "Emilys Candy", serif;
+}
+
+.widget-wrapper {
+  width: 100%;
+  max-width: 600px;
+}
+
+.nav-buttons-container {
+  display: flex;
+  position: relative;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 36px;
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  flex: 1;
+
+  background: transparent;
+  border: none;
+
+  color: #75ffc8;
+
+  /* FIXED FONT */
+  font-family: "Emilys Candy", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  height: 100%;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 2;
+
+  transition: color 0.2s ease;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn.active-tab,
+.nav-btn:hover {
+  color: #9dcffa;
+}
+
+/* Divider dots */
+.nav-btn:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 3px;
+  height: 15px;
+
+  background-image: radial-gradient(circle, #4d4449 1px, transparent 1.4px);
+  background-size: 3px 3.2px;
+  background-repeat: repeat-y;
+
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Sliding Gradient */
+.sliding-gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 0;
+
+  background: linear-gradient(
+    90deg,
+    #fbcfe8 0%,
+    #fae8ff 60%,
+    rgba(255,255,255,0) 100%
+  );
+
+  z-index: 1;
+
+  transition: all 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+
+  pointer-events: none;
+}
+
+/* SEARCH BAR */
+.search-bar-form {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+
+  flex-grow: 1;
+  padding-left: 18px;
+}
+
+.search-icon {
+  color: #e06391;
+  font-size: 14px;
+  margin-right: 12px;
+}
+
+/* SEARCH INPUT */
+#searchInput {
+  width: 100%;
+  border: none;
+
+  padding: 15px 0;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #555555;
+
+  outline: none;
+  letter-spacing: 0.5px;
+}
+
+#searchInput.showing-response {
+  font-family: "Roboto", sans-serif;
+  color: #f472b6;
+  font-weight: 500;
+}
+
+#searchInput::placeholder {
+  font-family: "Roboto", sans-serif;
+  color: #bcbcbc;
+  letter-spacing: 1px;
+}
+
+/* SEARCH BUTTON */
+.submit-search-btn {
+  background-color: #f48fb1;
+  color: #ffffff;
+
+  border: none;
+
+  height: 100%;
+  padding: 15px 38px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  align-self: stretch;
+
+  transition: background-color 0.2s ease;
+}
+
+.submit-search-btn:hover {
+  background-color: #f06292;
+}
+
+.search-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+/* Specific sizing rules designed for your pink magnifying glass image */
+.search-icon img {
+  width: 22px;         /* Gives the angled handle room to display */
+  height: 22px;        /* Matches the height to keep it proportional */
+  object-fit: contain; /* Keeps the resolution perfectly crisp and un-stretched */
+}
